@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector : 'pm-root',
@@ -6,5 +7,8 @@ import { Component } from "@angular/core";
 })
 export class AppComponent{
   pageTitle : String ='kirubakaran muthiah';
+  public constructor(titleService : Title){
+    titleService.setTitle("Products");
+  }
 
 }
