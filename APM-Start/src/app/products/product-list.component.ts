@@ -89,4 +89,13 @@ export class ProductListComponent implements OnInit{
       ];
       this.productsCopy=this.products;
     }
+
+    onRatingClicked(productId : number) : void{
+      this.productsCopy.forEach((product : Iproduct) => {
+        if(product.productId === productId)
+        {
+          product.starRating = (product.starRating+1) < 5 ? product.starRating+1 : 5;
+        }
+      })
+    }
 }

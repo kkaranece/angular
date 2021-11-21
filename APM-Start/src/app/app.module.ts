@@ -3,12 +3,14 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule, Title } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { ProductListComponent } from "./products/product-list.component";
+import { StarRating } from "./rating/star.rating.component";
 import { ConvertToSpace } from "./shared/ConvertToSpace";
 
 @NgModule({
   declarations : [AppComponent,
     ProductListComponent,
-  ConvertToSpace],
+    ConvertToSpace,
+    StarRating],
   imports :[BrowserModule,FormsModule],
   providers:[Title],
   bootstrap :[AppComponent]
