@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class='table-responsive'>
-            <table class='table' *ngIf='products.length'>
+            <table class='table' *ngIf='productsCopy.length'>
                 <thead>
                     <tr>
                         <th>
@@ -29,7 +29,7 @@
                       </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let product of products'>
+                    <tr *ngFor='let product of productsCopy'>
                         <td>
                             <img *ngIf='showImage' 
                                   [src]='product.imageUrl' 
@@ -37,7 +37,7 @@
                                   style='width :25px; height: 25px'/>
                         </td>
                         <td>{{product.productName}}</td>
-                        <td>{{product.productCode | lowercase}}</td>
+                        <td>{{product.productCode | lowercase | convertToSpace : '-'}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td>{{product.price | currency:'INR':'symbol':'1.2-2'}}</td>
                         <td>{{product.starRating}}</td>
