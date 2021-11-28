@@ -39,7 +39,7 @@
                                   [title]='product.productName | uppercase' 
                                   style='width :25px; height: 25px'/>
                         </td>
-                        <td>{{product.productName}}</td>
+                        <td><a [routerLink]="['/Products' ,product.productId]">{{product.productName}}</a></td>
                         <td>{{product.productCode | lowercase | convertToSpace : '-'}}</td>
                         <td>{{product.releaseDate}}</td>
                         <td>{{product.price | currency:'INR':'symbol':'1.2-2'}}</td>
@@ -53,3 +53,4 @@
     </div>
 
 </div>
+<router-outlet></router-outlet>

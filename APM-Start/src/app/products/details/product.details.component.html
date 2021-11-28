@@ -1,0 +1,68 @@
+<div class="card">
+    <div class="card-header">
+        ProductDetails : {{product?.productName}}
+        <div class="container">
+            <button class="btn btn-light"
+            *ngIf="cProductId > 1"
+            (click)="previous()"><i class="fas fa-arrow-left"></i></button>
+            <button class="btn btn-light"
+            (click)="next()"><i class="fas fa-arrow-left"></i></button>
+        </div>
+    </div>
+    <div class="card-body" *ngIf="product">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        Product code:
+                    </div>
+                    <div class="col">
+                        {{product?.productCode}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Release Date:
+                    </div>
+                    <div class="col">
+                        {{product?.releaseDate}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                         Description:
+                    </div>
+                    <div class="col">
+                        {{product?.description}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Price:
+                    </div>
+                    <div class="col">
+                        {{product?.price}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Rating:
+                    </div>
+                    <div class="col">
+                        <star-rating [rating] ="product.starRating"
+                                     [productId] = 'product.productId'></star-rating>
+                    </div>
+                </div>
+            </div>
+            <div class="col justify-content-md-center">
+                <img [src] = product?.imageUrl 
+                     [alt] = product?.productName
+                     [style.width.px] ="150"
+                     [style.height.px] ="150"/>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" (click)="onBack()">Back</button>
+    </div>
+</div>
