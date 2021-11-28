@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Title } from "@angular/platform-browser";
-import { ProductService } from "./products/product.service";
+import { ProductService } from "./products/service/product.service";
 
 @Component({
   selector : 'pm-root',

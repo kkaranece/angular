@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Iproduct } from "../Module/Iproduct";
+import { Iproduct } from "../model/Iproduct";
 import {tap,catchError, filter, map} from "rxjs/operators"
 import { Observable, throwError } from "rxjs";
 
@@ -13,7 +13,6 @@ export class ProductService{
     getProducts() : Observable<Iproduct[]>{
        return this.http.get<Iproduct[]>(this._httpUrl).pipe(
            tap(products => console.log('All : ',JSON.stringify(products))),
-           map(products => products.filter(product => product.productId ===1)),
            catchError(this.handleError)
        );
     }
